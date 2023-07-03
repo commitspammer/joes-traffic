@@ -1,0 +1,25 @@
+.footer {
+  padding: 1rem;
+  background-color: rgba(79, 79, 79, 1);
+  color: rgba(255, 255, 255, 1);
+}
+.copyright {
+  text-align: left;
+  padding-top: 1rem;
+}
+.info {
+  text-align: right;
+  position: relative;
+  bottom: 1.4rem;
+}
+
+@media (max-width: 950px) {
+  .copyright {
+    text-align: center;
+  }
+  .info {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+  }
+}

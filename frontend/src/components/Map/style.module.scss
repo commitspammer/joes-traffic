@@ -1,0 +1,13 @@
+.container {
+  position: relative;
+}
+
+.contact {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  float: right;
+}

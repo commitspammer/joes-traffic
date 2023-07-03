@@ -1,0 +1,38 @@
+version: "2"
+services:
+  mongodb:
+    image: mongo:3.4.7
+    hostname: mongodb
+    container_name: mongodb
+    expose:
+      - "27017"
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb-volume:/data
+    command: mongod --smallfiles
+
+  orion:
+    image: fiware/orion:1.7.0
+    hostname: orion
+    container_name: orion
+    links:
+      - mongodb
+    expose:
+      - "1026"
+    ports:
+      - "1026:1026"
+    command: -dbhost mongodb
+
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+
+  front:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+
+volumes:
+  mongodb-volume:
